@@ -1,0 +1,8 @@
+syms x;
+Eq = x*x+1;
+a = fzero('x*x+1',0);
+b = solve(Eq);
+disp(a);
+disp(b);
+
+% fzero не определяет комплексных корней уравнения
