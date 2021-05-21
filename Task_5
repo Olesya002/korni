@@ -1,0 +1,7 @@
+x = linspace(-100,100,100);
+Eq = cos(x)-exp(0.001+x.*x);
+a = fzero('cos(x)-exp(0.001+x.*x)',0);
+disp(a);
+b = solve(Eq);
+disp(b);
+plot(x,eval(Eq));
