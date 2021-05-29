@@ -1,7 +1,14 @@
-x = linspace(-100,100,100);
-Eq = cos(x)-exp(0.001+x.*x);
-a = fzero('cos(x)-exp(0.001+x.*x)',0);
-disp(a);
-b = solve(Eq);
-disp(b);
-plot(x,eval(Eq));
+x = -2:0.01:2;
+f = 'cos(x)-exp(0.001+x.^2)';
+plot(x,eval(f),x,0*x,':');
+grid on
+z = ginput(1);
+[zr,fr]=fzero(f,z(1));
+xz = fzero(f,z(1));
+hold on
+plot(zr,fr,'r*',z(1),z(2),'g*');
+disp(xz);
+syms x;
+Eq = cos(x)-exp(0.001+x.^2);
+xs = solve(Eq);
+disp(xs);
